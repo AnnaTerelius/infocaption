@@ -45,18 +45,17 @@ function App() {
             <input required className="search-field" type="text" placeholder="search" value={message} onChange={(event) => { setMessage(event.target.value); console.log("event onChange: Texten är " + event.target.value) }}></input>
             <button className="btn"  type="submit"> <img src={logo} alt="logo" /></button>
             {console.log(message)}
-            {console.log(data +"json som jag sätter i setdata")}
+            {console.log(data)}
           </div>
         </form>
-         
-        {data.length > 0 && 
+        </header>
+        {Object.keys(data).length != 0 &&
            <ul className="list">
-           {data.map((item) => (
-             <li ><button type="button" className="paginator" >{item}</button></li>))}
+            {data.results.map((item) => (
+              <a href={item.fullURL} target="_blank">
+              <li className="list-item" key={item.id}><div className="list-name">{item.name}</div><div className="list-summary">{item.summary}</div></li></a>))}
            </ul>
-           }
-          {console.log(data.results +"rad 58")} 
-      </header>
+            }
     </div>
   );
 }

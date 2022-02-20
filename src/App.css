@@ -31,6 +31,10 @@
   color: grey;
 }
 
+input:focus {
+  outline: none;
+}
+
 .btn {
   width: fit-content;
   height: 100%;
@@ -41,6 +45,44 @@
   margin-right: 12px;
   padding: 15px;
 }
+
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.list-item {
+  border-radius: 4px;
+  margin-bottom: 8px;
+  box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+  cursor: pointer;
+  list-style-type: none;
+  width: 500px;
+  height: 150px
+}
+
+.list-name {
+  margin-bottom: 8px;
+  font-size: 19.22px;
+  line-height: 27px;
+  font-weight: 600;
+  letter-spacing: 0.25px;
+  color: rgba(0, 0, 0, 0.87);
+  margin: 16px 0px 16px 0px;
+}
+
+.list-summary {
+  font-size: 13.57px;
+  line-height: 20px;
+  font-weight: 400;
+  letter-spacing: 0.25px;
+  color: rgba(0, 0, 0, 0.87);
+  margin: 16px 0px 16px 0px;
+}
+
+
+
 
 
 
