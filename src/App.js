@@ -56,7 +56,7 @@ function App() {
               <li className="list-item" key={item.id}><div className="list-name">{item.name}</div><div className="list-summary">{item.summary}</div></li></a>))}
            </ul>
             }
-            <Pagination data={data}/>
+            <Pagination data={data} message={message} setData={setData}/>
     </div>
   );
 }
