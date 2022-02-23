@@ -34,10 +34,9 @@ const Pagination = ({data, message, setData}) => {
 
     return (
         <div>
-            <p>PAGINATION COMPONENT</p>
             <form onSubmit={pageNumber}>
                 {pageNumbers.map((number) => (  
-                    <button className="btn"  type="submit" onClick={() => setPage(number)}>
+                    <button className="page-number"  type="submit" onClick={() => setPage(number)}>
                         {number}
                     </button>
                 ))}

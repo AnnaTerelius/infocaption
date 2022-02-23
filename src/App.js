@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Pagination from './components/Pagination';
 import logo from './logo1.svg';
@@ -11,7 +11,6 @@ function App() {
 
   const handleSearch = async (event) => {
     event.preventDefault()
-    console.log('event handleSearch= när man klickar på knappen ska man anropa API')
     setLoading(true);
     
     fetch('https://support.infocaption.com/API/lucene/guidesearch?<searchQuery>&hitsPerPage=9&searchQuery=' +message,{
@@ -20,21 +19,13 @@ function App() {
         'Accept': 'application/json'
        }
     }).then(function(response){
-        console.log(response)
         return response.json();
       })
       .then(function(myJson) {
-        console.log(myJson);
         setData(myJson);
         setLoading(false);
-      });
-
-      
+      });   
   }
-  /*
-  useEffect(()=>{
-    handleSearch()
-  },[])*/
  
 
   return (
@@ -42,10 +33,8 @@ function App() {
       <header className="App-header">
         <form className="search-container" onSubmit={handleSearch}>
           <div className="search-container">
-            <input  className="search-field" type="text" placeholder="search" value={message} onChange={(event) => { setMessage(event.target.value); console.log("event onChange: Texten är " + event.target.value) }}></input>
-            <button className="btn"  type="submit"> <img src={logo} alt="logo" /></button>
-            {console.log(message)}
-            {console.log(data)}
+            <input  className="search-field" type="text" placeholder="search" value={message} onChange={(event) => { setMessage(event.target.value) }}></input>
+            <button className="btn" type="submit"> <img src={logo} alt="logo"/></button>
           </div>
         </form>
         </header>
@@ -53,7 +42,7 @@ function App() {
            <ul className="list">
             {data.results.map((item) => (
               <a href={item.fullURL} target="_blank">
-              <li className="list-item" key={item.id}><div className="list-name">{item.name}</div><div className="list-summary">{item.summary}</div></li></a>))}
+              <li className="list-item" key={item.id}><div className="list-name">{item.name}</div><div className="list-summary">{item.summary}</div><div className="details-container"><div>{item.lastModifiedDate}</div><div className="url-email-container"><div className="url-email">URL</div><a href="mailto:?" target="_blank"><div className="url-email">EMAIL</div></a></div></div></li></a>))}
            </ul>
             }
             <Pagination data={data} message={message} setData={setData}/>

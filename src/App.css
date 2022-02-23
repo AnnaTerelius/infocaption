@@ -59,7 +59,7 @@ ul {
   cursor: pointer;
   list-style-type: none;
   width: 500px;
-  height: 150px
+  padding: 0px 10px 0px 10px;
 }
 
 .list-item:hover {
@@ -75,6 +75,7 @@ ul {
   letter-spacing: 0.25px;
   color: rgba(0, 0, 0, 0.87);
   margin: 16px 0px 16px 0px;
+  padding-top: 16px;
 }
 
 .list-summary {
@@ -88,6 +89,39 @@ ul {
 
 a:link {
   text-decoration: none;
+}
+
+.page-number {
+  border-radius: 50%;
+  margin: 10px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: rgba(84, 88, 242, 0.04);
+}
+
+.page-number:hover {
+  background-color: #5458F2;
+}
+
+.details-container {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 30px;
+  padding-bottom: 16px;
+  color: rgba(0, 0, 0, 0.6);
+  opacity: 0.8;
+  font-size: 12px;
+}
+
+.url-email-container {
+  display: flex;
+}
+
+.url-email {
+  margin-right: 30px;
+  font-weight: bold;
+  color: #5458F2;
 }
 
 
