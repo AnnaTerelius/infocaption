@@ -97,11 +97,15 @@ a:link {
   width: 40px;
   height: 40px;
   border: none;
-  background-color: rgba(84, 88, 242, 0.04);
 }
 
 .page-number:hover {
+  background-color: rgba(84, 88, 242, 0.04)
+}
+
+.page-number:focus {
   background-color: #5458F2;
+  color: white;
 }
 
 .details-container {

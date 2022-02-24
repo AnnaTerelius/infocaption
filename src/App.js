@@ -42,7 +42,7 @@ function App() {
            <ul className="list">
             {data.results.map((item) => (
               <a href={item.fullURL} target="_blank">
-              <li className="list-item" key={item.id}><div className="list-name">{item.name}</div><div className="list-summary">{item.summary}</div><div className="details-container"><div>{item.lastModifiedDate}</div><div className="url-email-container"><div className="url-email">URL</div><a href="mailto:?" target="_blank"><div className="url-email">EMAIL</div></a></div></div></li></a>))}
+              <li className="list-item" key={item.id}><div className="list-name">{item.name}</div><div className="list-summary">{item.summary}</div><div className="details-container"><div>{item.lastModifiedDate}</div><div className="url-email-container"><div className="url-email">URL</div><a href={"mailto:?subject=" + item.name + "&body=" +item.fullURL} target="_blank"><div className="url-email">EMAIL</div></a></div></div></li></a>))}
            </ul>
             }
             <Pagination data={data} message={message} setData={setData}/>
